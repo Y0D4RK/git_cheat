@@ -4,7 +4,7 @@ $file = "./app.html";
 
 $handle = fopen($file, "a") or die("Cannot open file: ".$file);
 $date = date("Y-m-d");
-fwrite($handle, $date);
+fwrite($handle, $date."\n");
 fclose($handle); die();
 
 
