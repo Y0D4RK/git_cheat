@@ -1,12 +1,21 @@
 <?php
 
-$file = file("./app.html");
+$file = "./app.html";
+
+$handle = fopen($file, "a") or die("Cannot open file: ".$file);
+$date = date("Y-m-d");
+fwrite($handle, $date);
+fclose($handle); die();
+
+
 
 
 try{
-    exec("git add .");
-    exec("git commit -m 'Updated'");
-    exec("git push origin master");
+    $out1 = exec("git add .");
+    print_r($out1);
+
+//    exec("git commit -m 'Updated'");
+//    exec("git push origin master");
 }catch(Exception $e){
     print_r("Erreur: ".$e);
 }
