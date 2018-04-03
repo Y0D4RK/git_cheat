@@ -3,9 +3,11 @@
 $file = file("./app.html");
 
 
-
-exec("git add .");
-exec("git commit -m 'Updated'");
-exec("git push origin master");
-
+try{
+    exec("git add .");
+    exec("git commit -m 'Updated'");
+    exec("git push origin master");
+}catch(Exception $e){
+    print_r("Erreur: ".$e);
+}
 ?>
